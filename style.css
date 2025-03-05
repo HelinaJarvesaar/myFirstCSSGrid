@@ -1,0 +1,349 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #efdfd9;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    /* 1 column, laius on 1 fraction (selle laiuse arvutab automaatselt)*/
+    grid-template-rows: repeat(3, auto);
+    /* 3 rida, laius auto*/
+    gap: 20px;
+}
+
+.grid-item {
+    display: grid;
+    /*et saaks align or justify item, peab siin olema grid või flex*/
+    border: 2px solid black;
+    justify-items: center;
+    /* items on sisu paneb hor-lt*/
+    align-items: center;
+    /* items sisu paneb vert-lt*/
+}
+
+.main {
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(4, auto);
+    gap: 20px;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(2, 180px);
+    grid-template-rows: repeat(1, auto);
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background-color: #df461c;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+
+.hamburger-menu {
+    width: 50px;
+    height: 50px;
+    background-color: #df461c;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    justify-self: end;
+    /* paigutab grid-i löppu*/
+}
+
+.star {
+    width: 300px;
+    height: 300px;
+    background-color: #DB7559;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+
+}
+
+.frame {
+    width: 300px;
+    height: 300px;
+    background-color: #3D4677;
+    clip-path: polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%);
+}
+
+.bevel {
+    width: 150px;
+    height: 150px;
+    background-color: #6370bb;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+
+}
+
+.message {
+    width: 150px;
+    height: 150px;
+    background-color: #aab5f1;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    margin: 0 auto 20px auto;
+}
+
+.social-media div {
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background-color: #07f6f6;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.page-menu {
+    display: none;
+}
+
+.gallery {
+    display: none;
+}
+
+.contact-form {
+    display: none;
+}
+
+.check-button {
+    display: none;
+}
+
+.bevel2 {
+    display: none;
+}
+
+
+@media (min-width: 600px) and (max-width: 1024px) {
+
+    /* tahvelarvutile*/
+    body {
+        background-color: #BFA9A0;
+        color: #3D4677;
+
+    }
+
+    .container {
+        width: 100%;
+        /* alati max erkaani laiuses*/
+    }
+
+    .menu {
+        width: 100%;
+        /*kogu ekraani laius*/
+        grid-template-columns: 1fr 2fr;
+        /*arvutab erkaani laiuse suhtes automaatselt 1osa+2osa ehk 3 võrdest osa*/
+    }
+
+    .hamburger-menu {
+        display: none;
+        /* võtan elemendi ära dokumendi voolust*/
+    }
+
+    .page-menu {
+        display: block;
+        /* mobiilis oli see display: none, nüüd toon nähtavale*/
+        list-style: none;
+        justify-self: end;
+        /*lükkab paremale serva*/
+        margin-right: 35px;
+    }
+
+    .page-menu li {
+        display: inline-block;
+        text-transform: uppercase;
+    }
+
+    .star {
+        justify-self: start;
+        margin-left: 35px;
+    }
+
+    .frame {
+        display: none;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 35px
+    }
+
+    .gallery-image {
+        width: 365px;
+        height: 160px;
+        background-color: #3D4677;
+        clip-path: polygon(0 1%, 100% 0, 100% 75%, 70% 100%, 0 100%);
+    }
+
+    .bevel {
+        width: 426px;
+        height: 426px;
+        margin-top: 35px;
+    }
+
+    .message {
+        display: none;
+    }
+
+    .contact-form {
+        display: block;
+        width: 726px;
+        height: 347px;
+        background-color: #aab5f1;
+        clip-path: polygon(0 1%, 100% 0, 100% 100%, 0 100%);
+        margin: 35px auto;
+    }
+
+    .social-media {
+        width: 100%;
+        display: flex;
+        justify-content: start;
+        /* või flex-start*/
+        gap: 35px;
+        padding-left: 35px;
+    }
+}
+
+@media (min-width: 1025px) {
+    /*laptop*/
+
+    body {
+        background-color: #6b5c57;
+    }
+
+    .menu {
+        width: 100%;
+        /*kogu ekraani laius*/
+        grid-template-columns: 1fr 2fr;
+        /*arvutab erkaani laiuse suhtes automaatselt 1osa+2osa ehk 3 võrdest osa*/
+    }
+
+    .logo {
+        width: 80px;
+        height: 80px;
+
+    }
+
+    .hamburger-menu {
+        display: none;
+        /* võtan elemendi ära dokumendi voolust*/
+    }
+
+    .page-menu {
+        display: block;
+        /* mobiilis oli see display: none, nüüd toon nähtavale*/
+        list-style: none;
+        justify-self: end;
+        /*lükkab paremale serva*/
+        padding-right: 70px;
+        font-size: 28px;
+    }
+
+    .page-menu li {
+        display: inline-block;
+        text-transform: uppercase;
+
+    }
+
+    .check-my-works {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .star {
+        width: 500px;
+        height: 500px;
+        justify-self: center;
+    }
+
+    .check-button {
+        display: block;
+        margin: auto 0;
+        margin-left: 70px;
+        width: 200px;
+        height: 200px;
+        background-color: #d88f7ab7;
+        clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    }
+
+
+    .frame {
+        display: none;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 35px
+    }
+
+    .gallery-image {
+        width: 430px;
+        height: 300px;
+        background-color: #3D4677;
+        clip-path: polygon(0 1%, 100% 0, 100% 75%, 70% 100%, 0 100%);
+    }
+
+    .myclients {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid: 35px;
+        margin-top: 35px;
+        margin-bottom: 35px;
+    }
+
+    .bevel {
+        width: 400px;
+        height: 360px;
+        justify-self: center;
+        margin-top: 35px;
+    }
+
+    .bevel2 {
+        display: block;
+        width: 846px;
+        height: 360px;
+        background-color: #242842;
+        clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+        justify-self: left;
+        margin-top: 35px;
+    }
+
+
+
+    .message {
+        display: none;
+    }
+
+    .contact-and-social {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .contact-form {
+        display: flex;
+        height: 500px;
+        background-color: #aab5f1;
+        clip-path: polygon(0 1%, 100% 0, 100% 100%, 0 100%);
+        margin-left: 35px;
+        margin-right: 35px;
+    }
+
+    .social-media {
+        display: flex;
+        gap: 35px;
+        margin: auto auto 35px auto;
+    }
+
+    .social-media div {
+        width: 120px;
+        height: 120px;
+    }
+
+    .footer {
+        font-size: 42px;
+    }
+}
